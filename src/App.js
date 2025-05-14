@@ -52,7 +52,7 @@ function App() {
           rel="noopener noreferrer" 
           className="btn-primary"
         >
-          Criar Homenagem
+          Crie um memorial agora
         </a>
       </section>
 
@@ -60,10 +60,10 @@ function App() {
       <section id="como-funciona" className="how-it-works">
         <h2>Como Funciona</h2>
         <ol>
-          <li>Preencha um formulário com informações do ente querido.</li>
-          <li>Nós criamos uma página exclusiva e bonita com essas memórias.</li>
-          <li>Receba um QR Code para fixar no túmulo ou memorial.</li>
-          <li>Qualquer pessoa pode escanear e acessar a homenagem.</li>
+          <li>   ✉️ Preencha um formulário com informações do ente querido.</li>
+          <li>   📄 Nós criamos uma página exclusiva e bonita com essas memórias.</li>
+          <li>   🗒️ Receba um QR Code para fixar no túmulo ou memorial.</li>
+          <li>   📲 Qualquer pessoa pode escanear e acessar a homenagem.</li>
         </ol>
       </section>
 
@@ -71,8 +71,8 @@ function App() {
       <section id="exemplos" className="examples">
         <h2>Exemplos de Páginas de Homenagem</h2>
         <div className="example">
-          <h3>Joaquim Almeida da Silva</h3>
-          <p>Uma vida dedicada à família e à arte.</p>
+          <h3>Preservando memórias que vivem para sempre</h3>
+          <p>Uma homenagem digital e eterna para seus entes queridos. Criamos memoriais online acessíveis através de QR codes elegantes e duráveis..</p>
           {/* Foto clicável que redireciona para um link externo */}
           <a 
             href="https://memorial-hesite.vercel.app"
@@ -109,20 +109,20 @@ function App() {
           <tbody>
             <tr>
               <td>Simples</td>
-              <td>Texto + foto</td>
-              <td>Simples (adesivo)</td>
+              <td>site comum</td>
+              <td>QR Code digital</td>
               <td>R$XX</td>
             </tr>
             <tr>
               <td>Completo</td>
-              <td>Biografia, fotos, vídeo</td>
-              <td>Placa personalizada</td>
+              <td>Site personalizado </td>
+              <td>QR Code fisico</td>
               <td>R$XX</td>
             </tr>
             <tr>
               <td>Premium</td>
               <td>Página completa + manutenção anual</td>
-              <td>QR Code vitalício</td>
+              <td>Dois QR Code personalizados</td>
               <td>R$XX</td>
             </tr>
           </tbody>
@@ -148,7 +148,7 @@ function App() {
 
       {/* Formulário de Contato */}
       <section id="contato" className="contact">
-        <h2>Contato</h2>
+        <h2>Entre em Contato e faça um orçamento</h2>
         <form
           onSubmit={(e) => {
             e.preventDefault(); // Evita o recarregamento da página
@@ -158,7 +158,7 @@ function App() {
             const mensagem = e.target.mensagem.value;
 
             // Cria a mensagem para o WhatsApp
-            const textoWhatsApp = `Olá, meu nome é ${nome}. Meu e-mail é ${email} e meu telefone é ${telefone}. Gostaria de entrar em contato. Mensagem: ${mensagem}`;
+            const textoWhatsApp = `Olá, meu nome é ${nome}. Meu e-mail é ${email} e meu telefone é ${telefone}. Gostaria de fazer um orçamento. Mensagem: ${mensagem}`;
 
             // Redireciona para o WhatsApp
             const numeroWhatsApp = "5588999344202"; // Substitua pelo seu número
@@ -188,11 +188,11 @@ function App() {
 
       {/* Rodapé */}
       <footer className="footer">
-        <p>© 2025 Eco Sagrado. Todos os direitos reservados.</p>
         <div className="social">
           <a href="https://facebook.com">Facebook</a>
           <a href="https://instagram.com">Instagram</a>
           <a href="mailto:fransnuunes1987@gmail.com?subject=Orçamento%20do%20site&body=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20site.">E-mail</a>
+          <p>© 2025 Eco Sagrado. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>

@@ -248,6 +248,7 @@ header nav ul li .cta:hover {
   background: linear-gradient(90deg, #4CAF50, #B0BEC5, #4CAF50); /* Gradiente */
   background-size: 200%; /* Faz o gradiente se mover */
   -webkit-background-clip: text; /* Aplica o gradiente apenas no texto */
+  background-clip: text; /* Propriedade padrão para compatibilidade */
   -webkit-text-fill-color: transparent; /* Torna o fundo do texto transparente */
   animation: gradient-animation 3s infinite; /* Animação infinita */
   text-align: center;
