@@ -19,7 +19,7 @@ function App() {
           Preservando memórias, conectando histórias.
         </p>
         <img 
-          src="/imagens/header.jpeg" 
+          src="/imagens/capa.png" 
           alt="Topo do site" 
           style={{
             width: '100%',
