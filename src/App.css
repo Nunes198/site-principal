@@ -76,13 +76,13 @@ ul {
 
 /* Cabeçalho */
 header {
-  background-color: #E0E0E0; /* Cinza neutro suave */
+  background-color: #8c8b8b; /* Cinza neutro suave */
   color: #F5F5F5; /* Texto em cinza claro */
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #CCCCCC; /* Borda cinza médio */
+  border-bottom: 1px solid #727171; /* Borda cinza médio */
   height: 200px; /* Altura do cabeçalho */
 }
 

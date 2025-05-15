@@ -62,7 +62,7 @@ function App() {
         <ol>
           <li>   ✉️ Preencha um formulário com informações do ente querido.</li>
           <li>   📄 Nós criamos uma página exclusiva e bonita com essas memórias.</li>
-          <li>   🗒️ Receba um QR Code para fixar no túmulo ou memorial.</li>
+          <li>   🗒️ Receba um QR Code para colocar no túmulo ou memorial.</li>
           <li>   📲 Qualquer pessoa pode escanear e acessar a homenagem.</li>
         </ol>
       </section>
@@ -148,7 +148,9 @@ function App() {
 
       {/* Formulário de Contato */}
       <section id="contato" className="contact">
-        <h2>Entre em Contato e faça um orçamento</h2>
+        <h2>Fale Conosco</h2>
+        <p>Estamos aqui para ajudar você a criar uma homenagem perfeita para seu ente querido. Entre em contato via WhatsApp e responderemos o mais breve possível.</p>
+        {/* Formulário de contato */}
         <form
           onSubmit={(e) => {
             e.preventDefault(); // Evita o recarregamento da página
