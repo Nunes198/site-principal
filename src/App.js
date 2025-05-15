@@ -4,6 +4,8 @@ import './App.css';
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Função para alternar o estado do menu
+  // Essa função altera o estado do menu de aberto para fechado e vice-versa
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
