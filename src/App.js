@@ -185,7 +185,7 @@ function App() {
             Mensagem:
             <textarea name="mensagem" required></textarea>
           </label>
-          <button type="submit">Enviar pelo WhatsApp</button>
+          <button type="submit">💬 Enviar Mensagem</button>
         </form>
       </section>
 
