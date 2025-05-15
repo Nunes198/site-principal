@@ -12,13 +12,7 @@ function App() {
     <div className="App">
       {/* Imagem no topo */}
       <div className="topo" style={{ textAlign: 'center', marginBottom: '10px' }}>
-        <h1 className="eco-sagrado">
-          Eco Sagrado
-        </h1>
-        <p className="eco-sagrado-frase">
-          Preservando memórias, conectando histórias.
-        </p>
-        <img 
+         <img 
           src="/imagens/capa.png" 
           alt="Topo do site" 
           style={{
@@ -27,6 +21,13 @@ function App() {
             display: 'block'
           }}
         />
+        <h1 className="eco-sagrado">
+          Eco Sagrado
+        </h1>
+        <p className="eco-sagrado-frase">
+          Preservando memórias, conectando histórias.
+        </p>
+       
       </div>
 
       {/* Menu de navegação */}
