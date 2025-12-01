@@ -4,8 +4,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   line-height: 1.6;
-  color: #4A4A4A; /* Cinza escuro para o texto */
-  background-color: #F5F5F5; /* Cinza bem claro para o fundo */
+  color: #4A4A4A;
+  /* Cinza escuro para o texto */
+  background-color: #F5F5F5;
+  /* Cinza bem claro para o fundo */
 }
 
 .App {
@@ -42,6 +44,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -54,13 +57,18 @@ body {
   padding: 0;
   box-sizing: border-box;
   line-height: 1.6;
-  color: #4A4A4A; /* Cinza escuro para o texto */
-  background-color: #F5F5F5; /* Cinza bem claro para o fundo */
+  color: #4A4A4A;
+  /* Cinza escuro para o texto */
+  background-color: #F5F5F5;
+  /* Cinza bem claro para o fundo */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
-  color: #2C2C2C; /* Preto suave para títulos */
+  color: #2C2C2C;
+  /* Preto suave para títulos */
 }
 
 a {
@@ -76,22 +84,29 @@ ul {
 
 /* Cabeçalho */
 header {
-  background-color: #8c8b8b; /* Cinza neutro suave */
-  color: #F5F5F5; /* Texto em cinza claro */
+  background-color: #8c8b8b;
+  /* Cinza neutro suave */
+  color: #F5F5F5;
+  /* Texto em cinza claro */
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #727171; /* Borda cinza médio */
-  height: 200px; /* Altura do cabeçalho */
+  border-bottom: 1px solid #727171;
+  /* Borda cinza médio */
+  height: 200px;
+  /* Altura do cabeçalho */
 }
 
 header .logo h1 {
-  font-size: 3rem; /* Tamanho do texto */
+  font-size: 3rem;
+  /* Tamanho do texto */
   margin: 0;
   padding: 0;
-  color: #2C2C2C; /* Preto suave */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+  color: #2C2C2C;
+  /* Preto suave */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Sombra para destaque */
 }
 
 header nav ul {
@@ -100,7 +115,8 @@ header nav ul {
 }
 
 header nav ul li a {
-  color: #4A4A4A; /* Cinza escuro */
+  color: #4A4A4A;
+  /* Cinza escuro */
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 5px;
@@ -108,13 +124,17 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background-color: #B0BEC5; /* Azul acinzentado claro */
-  color: #2C2C2C; /* Preto suave */
+  background-color: #B0BEC5;
+  /* Azul acinzentado claro */
+  color: #2C2C2C;
+  /* Preto suave */
 }
 
 header nav ul li .cta {
-  background-color: #B0BEC5; /* Azul acinzetado claro */
-  color: #2C2C2C; /* Preto suave */
+  background-color: #B0BEC5;
+  /* Azul acinzetado claro */
+  color: #2C2C2C;
+  /* Preto suave */
   padding: 8px 15px;
   border-radius: 5px;
   font-weight: bold;
@@ -122,14 +142,17 @@ header nav ul li .cta {
 }
 
 header nav ul li .cta:hover {
-  background-color: #E0E0E0; /* Cinza neutro suave */
-  color: #4A4A4A; /* Cinza escuro */
+  background-color: #E0E0E0;
+  /* Cinza neutro suave */
+  color: #4A4A4A;
+  /* Cinza escuro */
 }
 
 /* Estilo geral para os botões */
 .btn-primary {
   display: inline-block;
-  background-color: #4CAF50; /* Verde */
+  background-color: #4CAF50;
+  /* Verde */
   color: white;
   padding: 10px 20px;
   font-size: 1rem;
@@ -141,8 +164,10 @@ header nav ul li .cta:hover {
 }
 
 .btn-primary:hover {
-  background-color: #45a049; /* Verde mais escuro */
-  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+  background-color: #45a049;
+  /* Verde mais escuro */
+  transform: scale(1.05);
+  /* Efeito de zoom ao passar o mouse */
 }
 
 /* Estilo do menu */
@@ -156,14 +181,17 @@ header nav ul li .cta:hover {
 .menu-icon {
   font-size: 1.5rem;
   cursor: pointer;
-  display: none; /* Esconde no desktop */
+  display: none;
+  /* Esconde no desktop */
   text-align: center;
-  color: #4A4A4A; /* Cinza escuro */
+  color: #4A4A4A;
+  /* Cinza escuro */
   font-weight: bold;
 }
 
 .menu-links {
-  display: flex; /* Mostra os links por padrão no desktop */
+  display: flex;
+  /* Mostra os links por padrão no desktop */
   justify-content: space-between;
   list-style: none;
   padding: 0 20px;
@@ -171,7 +199,8 @@ header nav ul li .cta:hover {
 }
 
 .menu-links.open {
-  display: flex; /* Mostra os links quando o menu está aberto no celular */
+  display: flex;
+  /* Mostra os links quando o menu está aberto no celular */
   flex-direction: column;
   background-color: #E0E0E0;
   position: absolute;
@@ -198,16 +227,20 @@ header nav ul li .cta:hover {
 /* Mostra o botão do menu no celular */
 @media (max-width: 768px) {
   .menu-icon {
-    display: block; /* Mostra o botão no mobile */
+    display: block;
+    /* Mostra o botão no mobile */
     margin: 0 auto;
   }
 
   .menu-links {
-    display: none; /* Esconde os links por padrão no mobile */
+    display: none;
+    /* Esconde os links por padrão no mobile */
   }
 
+
   .menu-links.open {
-    display: flex; /* Mostra os links quando o menu está aberto */
+    display: flex;
+    /* Mostra os links quando o menu está aberto */
   }
 }
 
@@ -215,8 +248,10 @@ header nav ul li .cta:hover {
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background-color: #F5F5F5; /* Fundo cinza bem claro */
-  color: #2C2C2C; /* Preto suave */
+  background-color: #F5F5F5;
+  /* Fundo cinza bem claro */
+  color: #2C2C2C;
+  /* Preto suave */
 }
 
 .hero h2 {
@@ -225,8 +260,10 @@ header nav ul li .cta:hover {
 }
 
 .hero .btn-primary {
-  background-color: #B0BEC5; /* Azul acinzetado claro */
-  color: #2C2C2C; /* Preto suave */
+  background-color: #B0BEC5;
+  /* Azul acinzetado claro */
+  color: #2C2C2C;
+  /* Preto suave */
   padding: 10px 20px;
   font-size: 1.2rem;
   border: none;
@@ -236,47 +273,70 @@ header nav ul li .cta:hover {
 }
 
 .hero .btn-primary:hover {
-  background-color: #E0E0E0; /* Cinza neutro suave */
-  color: #4A4A4A; /* Cinza escuro */
+  background-color: #E0E0E0;
+  /* Cinza neutro suave */
+  color: #4A4A4A;
+  /* Cinza escuro */
 }
 
 /* Estilo para o nome "Eco Sagrado" */
 .eco-sagrado {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #2C2C2C; /* Preto suave */
-  background: linear-gradient(90deg, #4CAF50, #B0BEC5, #4CAF50); /* Gradiente */
-  background-size: 200%; /* Faz o gradiente se mover */
-  -webkit-background-clip: text; /* Aplica o gradiente apenas no texto */
-  background-clip: text; /* Propriedade padrão para compatibilidade */
-  -webkit-text-fill-color: transparent; /* Torna o fundo do texto transparente */
-  animation: gradient-animation 3s infinite; /* Animação infinita */
+  color: #2C2C2C;
+  /* Preto suave */
+  background: linear-gradient(90deg, #4CAF50, #B0BEC5, #4CAF50);
+  /* Gradiente */
+  background-size: 200%;
+  /* Faz o gradiente se mover */
+  -webkit-background-clip: text;
+  /* Aplica o gradiente apenas no texto */
+  background-clip: text;
+  /* Propriedade padrão para compatibilidade */
+  -webkit-text-fill-color: transparent;
+  /* Torna o fundo do texto transparente */
+  animation: gradient-animation 3s infinite;
+  /* Animação infinita */
   text-align: center;
-  margin: 0 0 2px 0; /* Reduz o espaçamento inferior */
+  margin: 0 0 2px 0;
+  /* Reduz o espaçamento inferior */
 }
 
 /* Estilo para a frase abaixo do nome */
 .eco-sagrado-frase {
-  font-size: 1.2rem; /* Tamanho da fonte menor que o título */
-  font-weight: 400; /* Peso da fonte mais leve */
-  color: #4A4A4A; /* Cinza escuro */
-  margin: 0; /* Remove margens externas */
-  text-align: center; /* Centraliza o texto */
+  font-size: 1.2rem;
+  /* Tamanho da fonte menor que o título */
+  font-weight: 400;
+  /* Peso da fonte mais leve */
+  color: #4A4A4A;
+  /* Cinza escuro */
+  margin: 0;
+  /* Remove margens externas */
+  text-align: center;
+  /* Centraliza o texto */
 }
 
 /* Efeito de gradiente animado no texto */
 .eco-sagrado {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #2C2C2C; /* Preto suave como fallback */
-  background: linear-gradient(90deg, #4CAF50, #B0BEC5, #4CAF50); /* Gradiente */
-  background-size: 200%; /* Faz o gradiente se mover */
-  -webkit-background-clip: text; /* Aplica o gradiente apenas no texto */
-  background-clip: text; /* Propriedade padrão para compatibilidade */
-  -webkit-text-fill-color: transparent; /* Torna o fundo do texto transparente */
-  animation: gradient-animation 3s infinite; /* Animação infinita */
+  color: #2C2C2C;
+  /* Preto suave como fallback */
+  background: linear-gradient(90deg, #4CAF50, #B0BEC5, #4CAF50);
+  /* Gradiente */
+  background-size: 200%;
+  /* Faz o gradiente se mover */
+  -webkit-background-clip: text;
+  /* Aplica o gradiente apenas no texto */
+  background-clip: text;
+  /* Propriedade padrão para compatibilidade */
+  -webkit-text-fill-color: transparent;
+  /* Torna o fundo do texto transparente */
+  animation: gradient-animation 3s infinite;
+  /* Animação infinita */
   text-align: center;
-  margin: 0 0 10px 0; /* Espaçamento inferior */
+  margin: 0 0 10px 0;
+  /* Espaçamento inferior */
 }
 
 /* Animação do gradiente */
@@ -284,6 +344,7 @@ header nav ul li .cta:hover {
   0% {
     background-position: 0%;
   }
+
   100% {
     background-position: 100%;
   }
@@ -297,27 +358,35 @@ section {
 section h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #2C2C2C; /* Preto suave */
+  color: #2C2C2C;
+  /* Preto suave */
 }
 
 /* Estilo para o passo a passo */
 .how-it-works ol {
-  font-size: 1.2rem; /* Aumenta o tamanho da fonte */
-  line-height: 1.8; /* Aumenta o espaçamento entre as linhas */
-  color: #4A4A4A; /* Cor do texto */
-  padding-left: 20px; /* Adiciona recuo para a lista */
-  text-align: left; /* Alinha o texto à esquerda */
+  font-size: 1.2rem;
+  /* Aumenta o tamanho da fonte */
+  line-height: 1.8;
+  /* Aumenta o espaçamento entre as linhas */
+  color: #4A4A4A;
+  /* Cor do texto */
+  padding-left: 20px;
+  /* Adiciona recuo para a lista */
+  text-align: left;
+  /* Alinha o texto à esquerda */
 }
 
 .how-it-works ol li {
-  margin-bottom: 10px; /* Adiciona espaçamento entre os itens */
+  margin-bottom: 10px;
+  /* Adiciona espaçamento entre os itens */
 }
 
 .how-it-works ol {
   max-width: 600px;
   margin: 0 auto;
   padding-left: 20px;
-  color: #4A4A4A; /* Cinza escuro */
+  color: #4A4A4A;
+  /* Cinza escuro */
 }
 
 /* Estilo para a imagem de exemplo */
@@ -325,15 +394,18 @@ section h2 {
   max-width: 150px;
   border-radius: 10px;
   margin-top: 10px;
-  border: 2px solid #CCCCCC; /* Cinza médio */
+  border: 2px solid #CCCCCC;
+  /* Cinza médio */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   /* Removido o filtro de escala de cinza */
 }
 
 .examples .example img:hover {
-  transform: scale(1.05); /* Aumenta ligeiramente a imagem ao passar o mouse */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+  transform: scale(1.05);
+  /* Aumenta ligeiramente a imagem ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Adiciona uma sombra */
 }
 
 /* Tabela de Preços */
@@ -344,23 +416,29 @@ section h2 {
   max-width: 800px;
 }
 
-.pricing table th, .pricing table td {
-  border: 1px solid #CCCCCC; /* Cinza médio */
+.pricing table th,
+.pricing table td {
+  border: 1px solid #CCCCCC;
+  /* Cinza médio */
   padding: 10px;
   text-align: center;
 }
 
 .pricing table th {
-  background-color: #E0E0E0; /* Cinza neutro suave */
-  color: #2C2C2C; /* Preto suave */
+  background-color: #E0E0E0;
+  /* Cinza neutro suave */
+  color: #2C2C2C;
+  /* Preto suave */
 }
 
 .pricing table tr:nth-child(even) {
-  background-color: #F5F5F5; /* Cinza bem claro */
+  background-color: #F5F5F5;
+  /* Cinza bem claro */
 }
 
 .pricing table tr:hover {
-  background-color: #E0E0E0; /* Cinza neutro suave */
+  background-color: #E0E0E0;
+  /* Cinza neutro suave */
 }
 
 /* Depoimentos */
@@ -369,14 +447,16 @@ section h2 {
   text-align: center;
   margin: 20px auto;
   max-width: 600px;
-  color: #4A4A4A; /* Cinza escuro */
+  color: #4A4A4A;
+  /* Cinza escuro */
 }
 
 .testimonials cite {
   display: block;
   margin-top: 10px;
   font-weight: bold;
-  color: #2C2C2C; /* Preto suave */
+  color: #2C2C2C;
+  /* Preto suave */
 }
 
 /* Formulário de Contato */
@@ -390,21 +470,28 @@ section h2 {
 
 .contact form label {
   font-weight: bold;
-  color: #2C2C2C; /* Preto suave */
+  color: #2C2C2C;
+  /* Preto suave */
 }
 
-.contact form input, .contact form textarea {
+.contact form input,
+.contact form textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #CCCCCC; /* Cinza médio */
+  border: 1px solid #CCCCCC;
+  /* Cinza médio */
   border-radius: 5px;
-  background-color: #F5F5F5; /* Cinza bem claro */
-  color: #4A4A4A; /* Cinza escuro */
+  background-color: #F5F5F5;
+  /* Cinza bem claro */
+  color: #4A4A4A;
+  /* Cinza escuro */
 }
 
 .contact form button {
-  background-color: #B0BEC5; /* Azul acinzetado claro */
-  color: #2C2C2C; /* Preto suave */
+  background-color: #B0BEC5;
+  /* Azul acinzetado claro */
+  color: #2C2C2C;
+  /* Preto suave */
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -414,135 +501,185 @@ section h2 {
 }
 
 .contact form button:hover {
-  background-color: #E0E0E0; /* Cinza neutro suave */
-  color: #4A4A4A; /* Cinza escuro */
+  background-color: #E0E0E0;
+  /* Cinza neutro suave */
+  color: #4A4A4A;
+  /* Cinza escuro */
 }
 
 /* Rodapé */
 footer {
-  background-color: #E0E0E0; /* Cinza neutro suave */
-  color: #4A4A4A; /* Cinza escuro */
+  background-color: #E0E0E0;
+  /* Cinza neutro suave */
+  color: #4A4A4A;
+  /* Cinza escuro */
   text-align: center;
   padding: 20px;
 }
 
 footer .social a {
-  color: #2C2C2C; /* Preto suave */
+  color: #2C2C2C;
+  /* Preto suave */
   margin: 0 10px;
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
 footer .social a:hover {
-  color: #B0BEC5; /* Azul acinzetado claro */
+  color: #B0BEC5;
+  /* Azul acinzetado claro */
 }
 
 /* Estilos responsivos para telas menores */
 @media (max-width: 768px) {
+
   /* Ajuste do cabeçalho */
   header {
-    flex-direction: column; /* Empilha os elementos no cabeçalho */
-    height: auto; /* Altura ajustável */
+    flex-direction: column;
+    /* Empilha os elementos no cabeçalho */
+    height: auto;
+    /* Altura ajustável */
     text-align: center;
   }
 
   header .logo h1 {
-    font-size: 2rem; /* Reduz o tamanho do texto no logo */
+    font-size: 2rem;
+    /* Reduz o tamanho do texto no logo */
   }
 
   header nav ul {
-    flex-direction: column; /* Empilha os itens do menu */
-    gap: 10px; /* Reduz o espaçamento entre os itens */
+    flex-direction: column;
+    /* Empilha os itens do menu */
+    gap: 10px;
+    /* Reduz o espaçamento entre os itens */
   }
 
   header nav ul li a {
-    font-size: 1rem; /* Reduz o tamanho da fonte dos links */
+    font-size: 1rem;
+    /* Reduz o tamanho da fonte dos links */
   }
 
   /* Ajuste da seção Hero */
   .hero {
-    padding: 40px 10px; /* Reduz o espaçamento interno */
+    padding: 40px 10px;
+    /* Reduz o espaçamento interno */
   }
 
   .hero h2 {
-    font-size: 1.8rem; /* Reduz o tamanho do título */
+    font-size: 1.8rem;
+    /* Reduz o tamanho do título */
   }
 
   .hero .btn-primary {
-    font-size: 1rem; /* Reduz o tamanho do botão */
-    padding: 8px 15px; /* Ajusta o espaçamento interno do botão */
+    font-size: 1rem;
+    /* Reduz o tamanho do botão */
+    padding: 8px 15px;
+    /* Ajusta o espaçamento interno do botão */
   }
 
   /* Ajuste das seções */
   section {
-    padding: 20px 10px; /* Reduz o espaçamento interno */
+    padding: 20px 10px;
+    /* Reduz o espaçamento interno */
   }
 
   section h2 {
-    font-size: 1.5rem; /* Reduz o tamanho dos títulos */
+    font-size: 1.5rem;
+    /* Reduz o tamanho dos títulos */
   }
 
   .how-it-works ol {
-    padding-left: 10px; /* Reduz o recuo da lista */
+    padding-left: 10px;
+    /* Reduz o recuo da lista */
   }
 
   /* Ajuste das imagens de exemplo */
   .examples .example img {
-    max-width: 100px; /* Reduz o tamanho das imagens */
+    max-width: 100px;
+    /* Reduz o tamanho das imagens */
   }
 
   /* Ajuste da tabela de preços */
   .pricing table {
-    font-size: 0.9rem; /* Reduz o tamanho do texto */
+    font-size: 0.9rem;
+    /* Reduz o tamanho do texto */
   }
 
-  .pricing table th, .pricing table td {
-    padding: 5px; /* Reduz o espaçamento interno das células */
+  .pricing table th,
+  .pricing table td {
+    padding: 5px;
+    /* Reduz o espaçamento interno das células */
   }
 
   /* Ajuste do formulário de contato */
   .contact form {
-    gap: 10px; /* Reduz o espaçamento entre os campos */
+    gap: 10px;
+    /* Reduz o espaçamento entre os campos */
   }
 
-  .contact form input, .contact form textarea {
-    font-size: 0.9rem; /* Reduz o tamanho do texto nos campos */
+  .contact form input,
+  .contact form textarea {
+    font-size: 0.9rem;
+    /* Reduz o tamanho do texto nos campos */
   }
 
   .contact form button {
-    font-size: 0.9rem; /* Reduz o tamanho do botão */
-    padding: 8px 10px; /* Ajusta o espaçamento interno */
+    font-size: 0.9rem;
+    /* Reduz o tamanho do botão */
+    padding: 8px 10px;
+    /* Ajusta o espaçamento interno */
   }
 
   /* Ajuste do rodapé */
   footer {
-    font-size: 0.9rem; /* Reduz o tamanho do texto no rodapé */
+    font-size: 0.9rem;
+    /* Reduz o tamanho do texto no rodapé */
   }
 
   footer .social a {
-    font-size: 1rem; /* Reduz o tamanho dos ícones de redes sociais */
+    font-size: 1rem;
+    /* Reduz o tamanho dos ícones de redes sociais */
   }
 }
 
 @media (max-width: 480px) {
+
   /* Ajustes adicionais para telas muito pequenas */
   header .logo h1 {
-    font-size: 1.8rem; /* Reduz ainda mais o tamanho do texto no logo */
+    font-size: 1.8rem;
+    /* Reduz ainda mais o tamanho do texto no logo */
   }
 
   header nav ul li a {
-    font-size: 0.9rem; /* Reduz o tamanho da fonte dos links */
+    font-size: 0.9rem;
+    /* Reduz o tamanho da fonte dos links */
   }
 
   .hero h2 {
-    font-size: 1.5rem; /* Reduz o tamanho do título */
+    font-size: 1.5rem;
+    /* Reduz o tamanho do título */
   }
 
   .hero .btn-primary {
-    font-size: 0.9rem; /* Reduz o tamanho do botão */
+    font-size: 0.9rem;
+    /* Reduz o tamanho do botão */
   }
 
   .examples .example img {
-    max-width: 80px; /* Reduz ainda mais o tamanho das imagens */
+    max-width: 80px;
+    /* Reduz ainda mais o tamanho das imagens */
   }
+}
+
+/* WhatsApp Button Global Styles */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
 }

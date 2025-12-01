@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import WhatsAppButton from './WhatsAppButton';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,9 +15,9 @@ function App() {
     <div className="App">
       {/* Imagem no topo */}
       <div className="topo" style={{ textAlign: 'center', marginBottom: '10px' }}>
-         <img 
-          src="/imagens/capa.png" 
-          alt="Topo do site" 
+        <img
+          src="/imagens/capa.png"
+          alt="Topo do site"
           style={{
             width: '100%',
             height: 'auto',
@@ -29,7 +30,7 @@ function App() {
         <p className="eco-sagrado-frase">
           Preservando memórias, conectando histórias.
         </p>
-       
+
       </div>
 
       {/* Menu de navegação */}
@@ -49,10 +50,10 @@ function App() {
       {/* Seção Hero */}
       <section id="inicio" className="hero">
         <h2>Preserve a memória de quem você ama com um memorial digital acessível por QR Code.</h2>
-        <a 
-          href="https://wa.me/5588999344202" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://wa.me/5588999344202"
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn-primary"
         >
           Crie um memorial agora
@@ -77,14 +78,14 @@ function App() {
           <h3>Preservando memórias que vivem para sempre</h3>
           <p>Uma homenagem digital e eterna para seus entes queridos. Criamos memoriais online acessíveis através de QR codes elegantes e duráveis..</p>
           {/* Foto clicável que redireciona para um link externo */}
-          <a 
+          <a
             href="https://memorial-hesite.vercel.app"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
           >
-            <img 
-              src="/imagens/pagina-exemplo.png" 
-              alt="Exemplo de homenagem" 
+            <img
+              src="/imagens/pagina-exemplo.png"
+              alt="Exemplo de homenagem"
               style={{
                 width: '100%', // Ajusta a largura para ocupar todo o espaço disponível
                 maxWidth: '600px', // Define um limite máximo para a largura
@@ -200,6 +201,7 @@ function App() {
           <p>© 2025 Eco Sagrado. Todos os direitos reservados.</p>
         </div>
       </footer>
+      <WhatsAppButton />
     </div>
   );
 }
