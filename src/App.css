@@ -683,3 +683,75 @@ footer .social a:hover {
 .whatsapp-button:hover {
   transform: scale(1.1);
 }
+
+/* Imagem da lembrança responsiva */
+.lembranca-img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .lembranca-img {
+    max-width: 200px;
+  }
+  .lembranca-modal-img {
+    max-width: 95vw;
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .lembranca-img {
+    max-width: 120px;
+  }
+  .lembranca-modal-img {
+    max-width: 98vw;
+    max-height: 40vh;
+  }
+}
+
+/* Modal overlay responsivo */
+.modal-overlay {
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Página de Privacidade responsiva */
+.privacidade {
+  max-width: 800px;
+  width: 100%;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px;
+}
+
+@media (max-width: 768px) {
+  .privacidade {
+    padding: 16px;
+    margin: 20px 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacidade {
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 0.95rem;
+  }
+  .privacidade h1 {
+    font-size: 1.3rem;
+  }
+  .privacidade h2 {
+    font-size: 1.1rem;
+  }
+}
