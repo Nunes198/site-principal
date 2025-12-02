@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import WhatsAppButton from './WhatsAppButton';
+import DepoimentosCarousel from './DepoimentosCarousel';
+import Loader from './Loader';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1800); // Loader por 1.8s
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   // Função para alternar o estado do menu
   // Essa função altera o estado do menu de aberto para fechado e vice-versa
@@ -27,8 +39,12 @@ function App() {
             boxShadow: '0 4px 24px rgba(0,0,0,0.08)'
           }}
         />
-        <h1 className="eco-sagrado" style={{ fontFamily: 'Merriweather, serif', fontWeight: 700, fontSize: '2.8rem', color: '#2C2C2C', marginTop: 10 }}>
+        <h1 className="eco-sagrado" style={{ fontFamily: 'Merriweather, serif', fontWeight: 700, fontSize: '2.8rem', color: '#2C2C2C', marginTop: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
           Eco Sagrado
+          {/* Ícone de eternidade */}
+          <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" fill="#4CAF50"/></svg>
+          </span>
         </h1>
         <p className="eco-sagrado-frase" style={{ fontSize: '1.3rem', color: '#5A5A5A', fontStyle: 'italic', marginBottom: 0 }}>
           Memórias eternas, homenagens que conectam gerações.
@@ -69,59 +85,133 @@ function App() {
       </section>
 
       {/* Como Funciona */}
-      <section id="como-funciona" className="how-it-works">
-        <h2 style={{ color: '#2C2C2C', fontWeight: 600 }}>Como Funciona</h2>
-        <ol style={{ fontSize: '1.15rem', color: '#444', maxWidth: 520, margin: '0 auto', background: '#fff', borderRadius: 10, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20 }}>
-          <li>✉️ Envie informações e fotos do ente querido.</li>
-          <li>🖼️ Receba uma página personalizada, elegante e sensível.</li>
-          <li>🔗 Receba o QR Code em cerâmica para fixar no túmulo ou memorial.</li>
-          <li>📲 Qualquer pessoa pode escanear e acessar a homenagem digital.</li>
+      <section id="como-funciona" className="how-it-works" style={{ textAlign: 'center' }}>
+        <h2 style={{ color: '#2C2C2C', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 10, justifyContent: 'center', textAlign: 'center' }}>
+          Como Funciona
+          {/* Ícone de QR Code */}
+          <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="6" height="6" rx="2" fill="#2196F3"/><rect x="15" y="3" width="6" height="6" rx="2" fill="#2196F3"/><rect x="3" y="15" width="6" height="6" rx="2" fill="#2196F3"/><rect x="15" y="15" width="6" height="6" rx="2" fill="#2196F3"/><rect x="10" y="10" width="4" height="4" rx="1" fill="#B0BEC5"/></svg>
+          </span>
+        </h2>
+        <ol style={{ fontSize: '1.15rem', color: '#444', maxWidth: 520, margin: '0 auto', background: '#fff', borderRadius: 10, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20, textAlign: 'left', display: 'inline-block' }}>
+          <li>✉️ Envie informações e fotos do ente querido. <span style={{ marginLeft: 6, verticalAlign: 'middle' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm-16 12V8.99l8 6.99 8-6.99V18H4z" fill="#FFC107"/></svg></span></li>
+          <li>🖼️ Receba uma página personalizada, elegante e sensível. <span style={{ marginLeft: 6, verticalAlign: 'middle' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-2 0H5V5h14v14zm-7-3l2.5 3.01L19 13l-4.5 6H7l4-6z" fill="#4CAF50"/></svg></span></li>
+          <li>🔗 Receba o QR Code em cerâmica para fixar no túmulo ou memorial. <span style={{ marginLeft: 6, verticalAlign: 'middle' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 7a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h10zm0 2H7v6h10V9z" fill="#2196F3"/></svg></span></li>
+          <li>📲 Qualquer pessoa pode escanear e acessar a homenagem digital. <span style={{ marginLeft: 6, verticalAlign: 'middle' }}><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 2v18H7V3h10zm-5 16c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2z" fill="#B0BEC5"/></svg></span></li>
         </ol>
       </section>
 
+      {/* Diferenciais */}
+      <section className="diferenciais" style={{ background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 32, maxWidth: 900, margin: '32px auto' }}>
+        <h2 style={{ color: '#2C2C2C', fontWeight: 600, textAlign: 'center', marginBottom: 24 }}>
+          Nossos Diferenciais
+        </h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 32 }}>
+          <div style={{ flex: '1 1 180px', minWidth: 180, textAlign: 'center' }}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.03 2 3 6.03 3 11c0 4.97 4.03 9 9 9s9-4.03 9-9c0-4.97-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7 0-3.87 3.13-7 7-7s7 3.13 7 7c0 3.87-3.13 7-7 7zm-1-13h2v6h-2zm0 8h2v2h-2z" fill="#B0BEC5"/></svg>
+            <div style={{ fontWeight: 500, marginTop: 8 }}>Cerâmica de alta qualidade</div>
+            <div style={{ fontSize: '0.95rem', color: '#666' }}>QR Code gravado em cerâmica resistente, feito para durar.</div>
+          </div>
+          <div style={{ flex: '1 1 180px', minWidth: 180, textAlign: 'center' }}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5.25-3.75 10-7 10s-7-4.75-7-10V6l7-4zm0 2.18L6 6.09v5.91c0 4.42 2.97 8.36 6 8.36s6-3.94 6-8.36V6.09l-6-1.91z" fill="#2196F3"/></svg>
+            <div style={{ fontWeight: 500, marginTop: 8 }}>Segurança e privacidade</div>
+            <div style={{ fontSize: '0.95rem', color: '#666' }}>Site protegido por SSL e compromisso com proteção de dados.</div>
+          </div>
+          <div style={{ flex: '1 1 180px', minWidth: 180, textAlign: 'center' }}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09C13.09 4.01 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#E53935"/></svg>
+            <div style={{ fontWeight: 500, marginTop: 8 }}>Personalização completa</div>
+            <div style={{ fontSize: '0.95rem', color: '#666' }}>Memorial digital feito sob medida, com fotos, textos e vídeos.</div>
+          </div>
+          <div style={{ flex: '1 1 180px', minWidth: 180, textAlign: 'center' }}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 15l-5-5 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" fill="#4CAF50"/></svg>
+            <div style={{ fontWeight: 500, marginTop: 8 }}>Atendimento humanizado</div>
+            <div style={{ fontSize: '0.95rem', color: '#666' }}>Equipe dedicada para ajudar em cada etapa da homenagem.</div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="faq" style={{ background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 32, maxWidth: 900, margin: '32px auto' }}>
+        <h2 style={{ color: '#2C2C2C', fontWeight: 600, textAlign: 'center', marginBottom: 24 }}>
+          Perguntas Frequentes (FAQ)
+        </h2>
+        <div className="faq-list">
+          <details style={{ marginBottom: 18 }}>
+            <summary style={{ fontWeight: 500, fontSize: '1.08rem', cursor: 'pointer', color: '#4CAF50' }}>Como funciona o memorial digital?</summary>
+            <div style={{ color: '#444', marginTop: 8 }}>Você envia as informações e fotos do ente querido, nós criamos uma página personalizada e geramos um QR Code para ser fixado no túmulo ou memorial.</div>
+          </details>
+          <details style={{ marginBottom: 18 }}>
+            <summary style={{ fontWeight: 500, fontSize: '1.08rem', cursor: 'pointer', color: '#4CAF50' }}>O QR Code é resistente ao tempo?</summary>
+            <div style={{ color: '#444', marginTop: 8 }}>Sim! O QR Code é gravado em cerâmica de alta qualidade, resistente ao sol, chuva e variações de temperatura.</div>
+          </details>
+          <details style={{ marginBottom: 18 }}>
+            <summary style={{ fontWeight: 500, fontSize: '1.08rem', cursor: 'pointer', color: '#4CAF50' }}>Quais informações posso colocar na homenagem?</summary>
+            <div style={{ color: '#444', marginTop: 8 }}>Você pode incluir textos, fotos, vídeos, depoimentos e outros detalhes que desejar para tornar a homenagem única.</div>
+          </details>
+          <details style={{ marginBottom: 18 }}>
+            <summary style={{ fontWeight: 500, fontSize: '1.08rem', cursor: 'pointer', color: '#4CAF50' }}>É seguro compartilhar dados no site?</summary>
+            <div style={{ color: '#444', marginTop: 8 }}>Sim! O site utiliza criptografia SSL e segue normas de proteção de dados. Suas informações são tratadas com total privacidade.</div>
+          </details>
+          <details style={{ marginBottom: 18 }}>
+            <summary style={{ fontWeight: 500, fontSize: '1.08rem', cursor: 'pointer', color: '#4CAF50' }}>Como faço para solicitar um memorial?</summary>
+            <div style={{ color: '#444', marginTop: 8 }}>Basta clicar no botão de contato ou preencher o formulário. Nossa equipe entrará em contato para orientar todo o processo.</div>
+          </details>
+        </div>
+      </section>
+
       {/* Exemplos */}
-      <section id="exemplos" className="examples">
-        <h2 style={{ color: '#2C2C2C', fontWeight: 600 }}>Exemplos de Homenagem</h2>
-        <div className="example" style={{ background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20, marginBottom: 24 }}>
-          <h3 style={{ color: '#4CAF50', fontWeight: 500 }}>Memória que vive para sempre</h3>
-          <p style={{ color: '#555', fontSize: '1rem' }}>Homenagem digital eterna, acessível por QR Code em cerâmica. Memorial online com fotos, textos e vídeos, criado com respeito e carinho.</p>
-          <a
-            href="https://memorial-hesite.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      <section id="exemplos" className="examples" style={{ textAlign: 'center' }}>
+        <h2 style={{ color: '#2C2C2C', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 10, justifyContent: 'center', textAlign: 'center' }}>
+          Exemplos de Homenagem
+          {/* Ícone de coração */}
+          <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09C13.09 4.01 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#E53935"/></svg>
+          </span>
+        </h2>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px', width: '100%' }}>
+          <div className="example" style={{ background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20, marginBottom: 0, display: 'block', textAlign: 'center', maxWidth: '600px', width: '100%' }}>
+            <h3 style={{ color: '#4CAF50', fontWeight: 500, textAlign: 'center' }}>Memória que vive para sempre</h3>
+            <p style={{ color: '#555', fontSize: '1rem', textAlign: 'center' }}>Homenagem digital eterna, acessível por QR Code em cerâmica. Memorial online com fotos, textos e vídeos, criado com respeito e carinho.</p>
+            <a
+              href="https://memorial-hesite.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/imagens/pagina-exemplo.png"
+                alt="Exemplo de homenagem"
+                style={{
+                  width: '100%',
+                  maxWidth: '600px',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto',
+                  borderRadius: '10px',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                }}
+              />
+            </a>
+          </div>
+          <div className="example" style={{ marginTop: 0, textAlign: 'center', background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20, display: 'block', maxWidth: '400px', width: '100%' }}>
+            <h3 style={{ color: '#4CAF50', fontWeight: 500, textAlign: 'center' }}>Lembrança física com QR Code</h3>
+            <p style={{ color: '#555', fontSize: '1rem', textAlign: 'center' }}>Exemplo de lembrança em cerâmica para túmulo, com QR Code que leva à homenagem digital. Clique na imagem para ampliar.</p>
             <img
-              src="/imagens/pagina-exemplo.png"
-              alt="Exemplo de homenagem"
+              src="/imagens/lembranca.jpeg"
+              alt="Exemplo de lembrança com QR Code"
+              className="lembranca-img"
               style={{
                 width: '100%',
-                maxWidth: '600px',
+                maxWidth: '400px',
                 height: 'auto',
-                display: 'block',
+                cursor: 'pointer',
+                borderRadius: '8px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
                 margin: '0 auto',
-                borderRadius: '10px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                display: 'block'
               }}
+              onClick={() => setShowModal(true)}
             />
-          </a>
-        </div>
-        <div className="example" style={{ marginTop: '30px', textAlign: 'center', background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20 }}>
-          <h3 style={{ color: '#4CAF50', fontWeight: 500 }}>Lembrança física com QR Code</h3>
-          <p style={{ color: '#555', fontSize: '1rem' }}>Exemplo de lembrança em cerâmica para túmulo, com QR Code que leva à homenagem digital. Clique na imagem para ampliar.</p>
-          <img
-            src="/imagens/lembranca.jpeg"
-            alt="Exemplo de lembrança com QR Code"
-            className="lembranca-img"
-            style={{
-              width: '100%',
-              maxWidth: '400px',
-              height: 'auto',
-              cursor: 'pointer',
-              borderRadius: '8px',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
-            }}
-            onClick={() => setShowModal(true)}
-          />
+          </div>
         </div>
 
         {/* Modal para exibir imagem ampliada */}
@@ -192,18 +282,7 @@ function App() {
       {/* Depoimentos */}
       <section id="depoimentos" className="testimonials">
         <h2 style={{ color: '#2C2C2C', fontWeight: 600 }}>Depoimentos</h2>
-        <blockquote style={{ background: '#F5F5F5', borderLeft: '4px solid #4CAF50', padding: '16px 24px', borderRadius: 8, margin: '16px auto', maxWidth: 520, color: '#444' }}>
-          <p>“O serviço foi incrível e trouxe muita emoção para nossa família.”</p>
-          <cite style={{ fontWeight: 500, color: '#2C2C2C' }}>João Silva</cite>
-        </blockquote>
-        <blockquote style={{ background: '#F5F5F5', borderLeft: '4px solid #4CAF50', padding: '16px 24px', borderRadius: 8, margin: '16px auto', maxWidth: 520, color: '#444' }}>
-          <p>“A página criada foi linda e cheia de detalhes que nos fizeram reviver momentos especiais.”</p>
-          <cite style={{ fontWeight: 500, color: '#2C2C2C' }}>Maria Oliveira</cite>
-        </blockquote>
-        <blockquote style={{ background: '#F5F5F5', borderLeft: '4px solid #4CAF50', padding: '16px 24px', borderRadius: 8, margin: '16px auto', maxWidth: 520, color: '#444' }}>
-          <p>“Recomendo a todos! O QR Code é prático e a homenagem ficou perfeita.”</p>
-          <cite style={{ fontWeight: 500, color: '#2C2C2C' }}>Carlos Pereira</cite>
-        </blockquote>
+        <DepoimentosCarousel />
       </section>
 
       {/* Formulário de Contato */}
@@ -255,6 +334,26 @@ function App() {
           <a href="https://instagram.com" style={{ margin: '0 12px', color: '#2C2C2C', fontWeight: 500 }}>Instagram</a>
           <a href="mailto:fransnuunes1987@gmail.com?subject=Orçamento%20do%20site&body=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20site." style={{ margin: '0 12px', color: '#2C2C2C', fontWeight: 500 }}>E-mail</a>
           <a href="/privacidade" style={{ margin: '0 12px', color: '#2C2C2C', fontWeight: 500 }}>Privacidade</a>
+        </div>
+        <div className="selos-seguranca" style={{ marginTop: 24, display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap', alignItems: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
+            {/* Ícone SSL */}
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9v4H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V9c0-3.87-3.13-7-7-7zm0 2c3.31 0 6 2.69 6 6v4H6V9c0-3.31 2.69-6 6-6zm-8 13v5h16v-5H4zm8 2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="#4CAF50"/></svg>
+            <div style={{ fontSize: '0.9rem', color: '#444' }}>Site Seguro SSL</div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            {/* Ícone proteção de dados */}
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5.25-3.75 10-7 10s-7-4.75-7-10V6l7-4zm0 2.18L6 6.09v5.91c0 4.42 2.97 8.36 6 8.36s6-3.94 6-8.36V6.09l-6-1.91z" fill="#2196F3"/></svg>
+            <div style={{ fontSize: '0.9rem', color: '#444' }}>Proteção de Dados</div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            {/* Ícone site confiável */}
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 15l-5-5 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" fill="#FFC107"/></svg>
+            <div style={{ fontSize: '0.9rem', color: '#444' }}>Site Confiável</div>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 8, fontSize: '0.95rem', color: '#666' }}>
+          Compromisso com sua privacidade e segurança. Seus dados são protegidos e o site utiliza criptografia SSL.
         </div>
         <p style={{ fontSize: '0.95rem', color: '#444', margin: 0 }}>© 2025 Eco Sagrado. Todos os direitos reservados.</p>
       </footer>

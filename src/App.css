@@ -170,6 +170,17 @@ header nav ul li .cta:hover {
   /* Efeito de zoom ao passar o mouse */
 }
 
+/* Animações suaves para botões */
+.btn-primary, .premium-btn, .contact form button {
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.btn-primary:hover, .premium-btn:hover, .contact form button:hover {
+  background: linear-gradient(90deg,#388E3C,#90A4AE);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(76,175,80,0.18);
+  transform: scale(1.05);
+}
+
 /* Estilo do menu */
 .menu {
   position: relative;
@@ -406,6 +417,15 @@ section h2 {
   /* Aumenta ligeiramente a imagem ao passar o mouse */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* Adiciona uma sombra */
+}
+
+/* Animação suave em imagens interativas */
+.examples .example img, .lembranca-img {
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+.examples .example img:hover, .lembranca-img:hover {
+  box-shadow: 0 8px 24px rgba(44,44,44,0.12);
+  transform: scale(1.04);
 }
 
 /* Tabela de Preços */
@@ -671,6 +691,26 @@ footer .social a:hover {
   }
 }
 
+@media (max-width: 400px) {
+  .faq {
+    padding: 4px;
+    margin: 8px 0;
+    border-radius: 8px;
+  }
+  .faq h2 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  .faq-list summary {
+    font-size: 0.95rem;
+    padding: 6px 0;
+  }
+  .faq-list div {
+    font-size: 0.92rem;
+    padding: 2px 0 6px 0;
+  }
+}
+
 /* WhatsApp Button Global Styles */
 .whatsapp-button {
   position: fixed;
@@ -753,5 +793,185 @@ footer .social a:hover {
   }
   .privacidade h2 {
     font-size: 1.1rem;
+  }
+}
+
+/* Fade-in nas seções ao carregar */
+section, .privacidade, .example {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delay para cada seção (efeito cascata) */
+.hero { animation-delay: 0.1s; }
+.how-it-works { animation-delay: 0.2s; }
+.examples { animation-delay: 0.3s; }
+.pricing { animation-delay: 0.4s; }
+.testimonials { animation-delay: 0.5s; }
+.contact { animation-delay: 0.6s; }
+.privacidade { animation-delay: 0.7s; }
+
+/* Carrossel de depoimentos responsivo */
+.depoimentos-carousel blockquote {
+  transition: opacity 0.5s;
+}
+.depoimentos-carousel button {
+  transition: color 0.3s, transform 0.2s;
+}
+.depoimentos-carousel button:hover {
+  color: #388E3C;
+  transform: scale(1.2);
+}
+@media (max-width: 600px) {
+  .depoimentos-carousel {
+    max-width: 98vw;
+    padding: 8px;
+  }
+  .depoimentos-carousel blockquote {
+    padding: 12px 8px;
+    font-size: 0.98rem;
+  }
+  .depoimentos-carousel button {
+    font-size: 20px;
+  }
+}
+
+/* Loader personalizado com logo */
+.loader-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(245,245,245,0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+.loader-content {
+  text-align: center;
+}
+.loader-logo {
+  width: 90px;
+  height: 90px;
+  animation: loader-spin 1.2s linear infinite;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(44,44,44,0.08);
+}
+.loader-text {
+  margin-top: 18px;
+  font-size: 1.15rem;
+  color: #4CAF50;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+@keyframes loader-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@media (max-width: 600px) {
+  .loader-logo { width: 60px; height: 60px; border-radius: 50%; }
+  .loader-text { font-size: 1rem; }
+}
+
+/* Diferenciais responsivos */
+.diferenciais {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px;
+  max-width: 900px;
+  margin: 32px auto;
+}
+.diferenciais h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.diferenciais div[style*='flex'] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+.diferenciais div[style*='text-align: center'] {
+  min-width: 180px;
+  flex: 1 1 180px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .diferenciais {
+    padding: 16px;
+  }
+  .diferenciais div[style*='flex'] {
+    gap: 16px;
+  }
+  .diferenciais div[style*='text-align: center'] {
+    min-width: 120px;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  .diferenciais {
+    padding: 8px;
+  }
+  .diferenciais div[style*='flex'] {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* FAQ responsivo */
+.faq {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px;
+  max-width: 900px;
+  margin: 32px auto;
+}
+.faq h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.faq-list details {
+  margin-bottom: 18px;
+}
+.faq-list summary {
+  font-weight: 500;
+  font-size: 1.08rem;
+  cursor: pointer;
+  color: #4CAF50;
+  outline: none;
+  transition: color 0.2s;
+}
+.faq-list summary:hover {
+  color: #388E3C;
+}
+.faq-list div {
+  color: #444;
+  margin-top: 8px;
+  font-size: 0.98rem;
+}
+@media (max-width: 700px) {
+  .faq {
+    padding: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .faq {
+    padding: 8px;
+  }
+  .faq-list summary {
+    font-size: 1rem;
+  }
+  .faq-list div {
+    font-size: 0.95rem;
   }
 }
