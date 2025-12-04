@@ -7,12 +7,71 @@ import Loader from './Loader';
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [modalImg, setModalImg] = useState('/imagens/lembranca.jpeg');
+  const [lembrancaIndex, setLembrancaIndex] = useState(0);
+  const [lembrancaFade, setLembrancaFade] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [exemploIndex, setExemploIndex] = useState(0);
+  const [exemploFade, setExemploFade] = useState(true);
+  const lembrancas = ['/imagens/lembranca.jpeg', '/imagens/lembranca2.jpeg'];
+  const exemplos = [
+    {
+      img: '/imagens/pagina-exemplo.png',
+      link: 'https://memorial-hesite.vercel.app',
+      alt: 'Exemplo de homenagem 1'
+    },
+    {
+      img: '/imagens/pagina-exemplo2.png',
+      link: 'https://memorial-website-mae.vercel.app',
+      alt: 'Exemplo de homenagem 2'
+    }
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1800); // Loader por 1.8s
     return () => clearTimeout(timer);
   }, []);
+
+  // Transição automática
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLembrancaFade(false);
+      setTimeout(() => {
+        setLembrancaIndex((prev) => (prev + 1) % lembrancas.length);
+        setLembrancaFade(true);
+      }, 350);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [lembrancaIndex, lembrancas.length]);
+
+  // Navegação manual com fade
+  const handleLembrancaNav = (dir) => {
+    setLembrancaFade(false);
+    setTimeout(() => {
+      setLembrancaIndex((prev) => (dir === 'prev' ? (prev - 1 + lembrancas.length) % lembrancas.length : (prev + 1) % lembrancas.length));
+      setLembrancaFade(true);
+    }, 350);
+  };
+
+  // Transição automática para exemplos
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setExemploFade(false);
+      setTimeout(() => {
+        setExemploIndex((prev) => (prev + 1) % exemplos.length);
+        setExemploFade(true);
+      }, 350);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [exemploIndex, exemplos.length]);
+
+  const handleExemploNav = (dir) => {
+    setExemploFade(false);
+    setTimeout(() => {
+      setExemploIndex((prev) => (dir === 'prev' ? (prev - 1 + exemplos.length) % exemplos.length : (prev + 1) % exemplos.length));
+      setExemploFade(true);
+    }, 350);
+  };
 
   if (loading) {
     return <Loader />;
@@ -82,6 +141,10 @@ function App() {
         >
           Solicite seu memorial
         </a>
+        <div style={{ marginTop: 24, background: '#fff', borderRadius: 10, boxShadow: '0 2px 8px rgba(44,175,80,0.08)', padding: 18, maxWidth: 520, marginLeft: 'auto', marginRight: 'auto', color: '#388E3C', fontWeight: 500, fontSize: '1.08rem', textAlign: 'center' }}>
+          <span style={{ fontSize: '1.2rem', color: '#2C2C2C', fontWeight: 600 }}>Homenagem eterna, pagamento único!</span><br />
+          Ao adquirir seu memorial digital, você faz um investimento único e garante que a homenagem ficará disponível para sempre, sem mensalidades ou taxas futuras. Valorize a memória de quem você ama com uma página exclusiva, duradoura e acessível eternamente.
+        </div>
       </section>
 
       {/* Como Funciona */}
@@ -172,45 +235,39 @@ function App() {
           <div className="example" style={{ background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20, marginBottom: 0, display: 'block', textAlign: 'center', maxWidth: '600px', width: '100%' }}>
             <h3 style={{ color: '#4CAF50', fontWeight: 500, textAlign: 'center' }}>Memória que vive para sempre</h3>
             <p style={{ color: '#555', fontSize: '1rem', textAlign: 'center' }}>Homenagem digital eterna, acessível por QR Code em cerâmica. Memorial online com fotos, textos e vídeos, criado com respeito e carinho.</p>
-            <a
-              href="https://memorial-hesite.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/imagens/pagina-exemplo.png"
-                alt="Exemplo de homenagem"
-                style={{
-                  width: '100%',
-                  maxWidth: '600px',
-                  height: 'auto',
-                  display: 'block',
-                  margin: '0 auto',
-                  borderRadius: '10px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
-                }}
-              />
-            </a>
-          </div>
-          <div className="example" style={{ marginTop: 0, textAlign: 'center', background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20, display: 'block', maxWidth: '400px', width: '100%' }}>
-            <h3 style={{ color: '#4CAF50', fontWeight: 500, textAlign: 'center' }}>Lembrança física com QR Code</h3>
-            <p style={{ color: '#555', fontSize: '1rem', textAlign: 'center' }}>Exemplo de lembrança em cerâmica para túmulo, com QR Code que leva à homenagem digital. Clique na imagem para ampliar.</p>
-            <img
-              src="/imagens/lembranca.jpeg"
-              alt="Exemplo de lembrança com QR Code"
-              className="lembranca-img"
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                height: 'auto',
-                cursor: 'pointer',
-                borderRadius: '8px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                margin: '0 auto',
-                display: 'block'
-              }}
-              onClick={() => setShowModal(true)}
-            />
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+              <button onClick={() => handleExemploNav('prev')} style={{ position: 'absolute', left: -32, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', fontSize: 28, color: '#4CAF50', cursor: 'pointer', zIndex: 2 }} aria-label="Anterior">‹</button>
+              <a
+                href={exemplos[exemploIndex].link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={exemplos[exemploIndex].img}
+                  alt={exemplos[exemploIndex].alt}
+                  className={exemploFade ? 'fade-in' : 'fade-out'}
+                  style={{
+                    width: '100%',
+                    maxWidth: '600px',
+                    height: 'auto',
+                    display: 'block',
+                    margin: '0 auto',
+                    borderRadius: '10px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                    transition: 'opacity 0.35s'
+                  }}
+                />
+              </a>
+              <button onClick={() => handleExemploNav('next')} style={{ position: 'absolute', right: -32, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', fontSize: 28, color: '#4CAF50', cursor: 'pointer', zIndex: 2 }} aria-label="Próxima">›</button>
+            </div>
+            <div style={{ marginTop: 8 }}>
+              {exemplos.map((_, i) => (
+                <span key={i} style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: i === exemploIndex ? '#4CAF50' : '#B0BEC5', margin: '0 3px' }}></span>
+              ))}
+            </div>
+            <div style={{ marginTop: 20, textAlign: 'center', fontSize: '1.08rem', color: '#388E3C', fontWeight: 500 }}>
+              Clique nas imagens acima para visualizar exemplos reais de sites de homenagem criados por nossa equipe.
+            </div>
           </div>
         </div>
 
@@ -230,7 +287,7 @@ function App() {
           }} onClick={() => setShowModal(false)}>
             <div style={{ position: 'relative', background: '#fff', padding: 20, borderRadius: 10 }}>
               <img
-                src="/imagens/lembranca.jpeg"
+                src={modalImg}
                 alt="Exemplo de lembrança ampliada"
                 className="lembranca-modal-img"
                 style={{ maxWidth: '80vw', maxHeight: '80vh', borderRadius: '8px' }}

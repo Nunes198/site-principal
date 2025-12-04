@@ -975,3 +975,11 @@ section, .privacidade, .example {
     font-size: 0.95rem;
   }
 }
+
+/* Fade para carrossel de lembranças */
+.lembranca-img.fade-in {
+  opacity: 1;
+}
+.lembranca-img.fade-out {
+  opacity: 0;
+}

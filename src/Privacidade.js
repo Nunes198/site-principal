@@ -48,6 +48,24 @@ function Privacidade() {
       <h2>8. Contato</h2>
       <p>Em caso de dúvidas sobre esta política, entre em contato pelo e-mail: <a href="mailto:fransnuunes1987@gmail.com">fransnuunes1987@gmail.com</a></p>
       <p style={{ marginTop: 32, color: '#888', fontSize: '0.95rem' }}>Última atualização: 2 de dezembro de 2025</p>
+      <button
+        onClick={() => navigate('/')}
+        style={{
+          background: 'linear-gradient(90deg,#4CAF50,#B0BEC5)',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '8px',
+          padding: '10px 24px',
+          fontWeight: 600,
+          fontSize: '1rem',
+          margin: '32px auto 0',
+          display: 'block',
+          cursor: 'pointer',
+          boxShadow: '0 2px 8px rgba(76,175,80,0.12)'
+        }}
+      >
+        ← Voltar para a página inicial
+      </button>
     </div>
   );
 }
