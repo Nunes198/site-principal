@@ -141,7 +141,7 @@ function App() {
         >
           Solicite seu memorial
         </a>
-        <div style={{ marginTop: 24, background: '#fff', borderRadius: 10, boxShadow: '0 2px 8px rgba(44,175,80,0.08)', padding: 18, maxWidth: 520, marginLeft: 'auto', marginRight: 'auto', color: '#388E3C', fontWeight: 500, fontSize: '1.08rem', textAlign: 'center' }}>
+        <div style={{ marginTop: 24, background: '#fff', borderRadius: 10, boxShadow: '0 2px 8px rgba(0,175,80,0.08)', padding: 18, maxWidth: 520, marginLeft: 'auto', marginRight: 'auto', color: '#388E3C', fontWeight: 500, fontSize: '1.08rem', textAlign: 'center' }}>
           <span style={{ fontSize: '1.2rem', color: '#2C2C2C', fontWeight: 600 }}>Homenagem eterna, pagamento único!</span><br />
           Ao adquirir seu memorial digital, você faz um investimento único e garante que a homenagem ficará disponível para sempre, sem mensalidades ou taxas futuras. Valorize a memória de quem você ama com uma página exclusiva, duradoura e acessível eternamente.
         </div>
@@ -267,6 +267,37 @@ function App() {
             </div>
             <div style={{ marginTop: 20, textAlign: 'center', fontSize: '1.08rem', color: '#388E3C', fontWeight: 500 }}>
               Clique nas imagens acima para visualizar exemplos reais de sites de homenagem criados por nossa equipe.
+            </div>
+            {/* Carrossel de lembranças físicas com QR Code */}
+            <div className="example" style={{ marginTop: 32, textAlign: 'center', background: '#fff', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: 20, display: 'block', maxWidth: '400px', width: '100%', marginLeft: 'auto', marginRight: 'auto' }}>
+              <h3 style={{ color: '#4CAF50', fontWeight: 500, textAlign: 'center' }}>Lembrança física com QR Code</h3>
+              <p style={{ color: '#555', fontSize: '1rem', textAlign: 'center' }}>Exemplo de lembrança em cerâmica para túmulo, com QR Code que leva à homenagem digital. Clique na imagem para ampliar.</p>
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <button onClick={() => handleLembrancaNav('prev')} style={{ position: 'absolute', left: -32, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', fontSize: 28, color: '#4CAF50', cursor: 'pointer', zIndex: 2 }} aria-label="Anterior">‹</button>
+                <img
+                  src={lembrancas[lembrancaIndex]}
+                  alt={`Exemplo de lembrança ${lembrancaIndex + 1}`}
+                  className={`lembranca-img ${lembrancaFade ? 'fade-in' : 'fade-out'}`}
+                  style={{
+                    width: '100%',
+                    maxWidth: '400px',
+                    height: 'auto',
+                    cursor: 'pointer',
+                    borderRadius: '8px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                    margin: '0 auto',
+                    display: 'block',
+                    transition: 'opacity 0.35s'
+                  }}
+                  onClick={() => { setShowModal(true); setModalImg(lembrancas[lembrancaIndex]); }}
+                />
+                <button onClick={() => handleLembrancaNav('next')} style={{ position: 'absolute', right: -32, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', fontSize: 28, color: '#4CAF50', cursor: 'pointer', zIndex: 2 }} aria-label="Próxima">›</button>
+              </div>
+              <div style={{ marginTop: 8 }}>
+                {lembrancas.map((_, i) => (
+                  <span key={i} style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: i === lembrancaIndex ? '#4CAF50' : '#B0BEC5', margin: '0 3px' }}></span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
